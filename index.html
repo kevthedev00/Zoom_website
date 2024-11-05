@@ -36,6 +36,11 @@
         #cornerButton:hover {
             background-color: #0056b3;
         }
+        #zoom-embeddable-phone-iframe {
+            height: 700px;
+            width: 840px;  
+        }
+        
     </style>
     <script data-apikey="4ixeE5G5QLu-GPuJgiK3dw" data-env="us01" src="https://us01ccistatic.zoom.us/us01cci/web-sdk/zcc-sdk.js"></script>
     <script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script><script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siqce68be772ee1a870a58498d599dc1fc8d3e28a152f1858d11004e12a2cd4b954" defer></script>
@@ -49,6 +54,12 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <iframe
+        src="https://zoom.us/crm-int/callbar/?origin=YOUR_DOMAIN"
+        sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-scripts allow-same-origin allow-downloads"
+        allow=";autoplay;microphone;camera;display-capture;midi;encrypted-media;clipboard-write;"
+        id="zoom-embeddable-phone-iframe"
+        ></iframe>
     </div>
 
     <!--<button id="cornerButton">Click Me!</button>-->
