@@ -65,22 +65,19 @@
                 }
             }
         });
-        const initZoomEmbed = async () => {
-            await ZoomContactCenterEmbed.init({
-                clientId: 'YOUR_CLIENT_ID',
-                redirectUri: 'YOUR_REDIRECT_URI',
-            });
-        
-            // Set up Click-to-Call event
-            document.getElementById('callButton').addEventListener('click', () => {
-                ZoomContactCenterEmbed.startCall({
-                    phoneNumber: '+1234567890' // Replace with the desired phone number
-                });
-            });
-        };
+        window.addEventListener('message', (e) => {
+          const data = e.data;
+          if (data) {
+            switch (data.type) { 
+              case 'zcc-contact-search-event': // listen to all the event types that you need
+                console.log(data.data); 
+                break;
+            }
+          }
+        });
         initZoomEmbed();
         <iframe
-        src="https://zoom.us/crm-int/callbar/?origin=YOUR_DOMAIN"
+        src="https://zoom.us/crm-int/callbar/?origin=https://kevthedev00.github.io/Zoom_website/"
         sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-scripts allow-same-origin allow-downloads"
         allow=";autoplay;microphone;camera;display-capture;midi;encrypted-media;clipboard-write;"
         id="zoom-embeddable-phone-iframe"
